@@ -11,13 +11,11 @@ var trap = function(height) {
     let water = 0;
     while(left <= right) {
        if (height[left] <= height[right]){
-           if (height[left] >= leftmax) leftmax = height[left];
-           else water += leftmax - height[left];
+            (height[left] >= leftmax) ? leftmax = height[left] : water += leftmax - height[left];
            left++;
        } else {
-           if (height[right] >= rightmax) rightmax = height[right];
-           else water += rightmax - height[right];
-           right--;
+            (height[right] >= rightmax) ? rightmax = height[right] : water += rightmax - height[right];
+            right--;
        }
     }
     return water;
